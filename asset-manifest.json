@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Card-Details-Form-FrontendMentor/static/css/main.c2e8baa5.css",
+    "main.js": "/Card-Details-Form-FrontendMentor/static/js/main.81a0d490.js",
+    "static/js/787.d8aa99ce.chunk.js": "/Card-Details-Form-FrontendMentor/static/js/787.d8aa99ce.chunk.js",
+    "static/media/bg-main-mobile.png": "/Card-Details-Form-FrontendMentor/static/media/bg-main-mobile.806e7aa7b4dbc1d78bc3.png",
+    "static/media/bg-card-back.png": "/Card-Details-Form-FrontendMentor/static/media/bg-card-back.23f68fa3aa3d5b33dfc8.png",
+    "static/media/bg-card-front.png": "/Card-Details-Form-FrontendMentor/static/media/bg-card-front.8153e2ca184402a8385f.png",
+    "index.html": "/Card-Details-Form-FrontendMentor/index.html",
+    "static/media/card-logo.svg": "/Card-Details-Form-FrontendMentor/static/media/card-logo.8ca9036515954c3f8191559dce9c7bdf.svg",
+    "main.c2e8baa5.css.map": "/Card-Details-Form-FrontendMentor/static/css/main.c2e8baa5.css.map",
+    "main.81a0d490.js.map": "/Card-Details-Form-FrontendMentor/static/js/main.81a0d490.js.map",
+    "787.d8aa99ce.chunk.js.map": "/Card-Details-Form-FrontendMentor/static/js/787.d8aa99ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2e8baa5.css",
+    "static/js/main.81a0d490.js"
+  ]
+}

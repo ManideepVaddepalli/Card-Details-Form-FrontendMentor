@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import tickmark from "../images/icon-complete.svg";
 import { createRoot } from "react-dom/client";
 import { Cardsection } from "./Cardsection";
 
@@ -29,8 +30,10 @@ function Bottomsection() {
     cvc: "",
   };
   let [key, setKey] = React.useState(validation);
+  let checkerForCondition = "green";
 
   function validator() {
+    checkerForCondition = "green";
     let inputboxes = document.querySelectorAll(".form input");
     console.log(inputboxes[0]);
     let currentDate = new Date();
@@ -46,6 +49,7 @@ function Bottomsection() {
           };
         });
       } else {
+        checkerForCondition = "red";
         inputboxes[0].style.border = "1px solid hsl(0, 100%, 66%)";
         setKey((Elem) => {
           return {
@@ -55,6 +59,7 @@ function Bottomsection() {
         });
       }
     } else {
+      checkerForCondition = "red";
       setKey((Elem) => {
         inputboxes[0].style.border = "1px solid hsl(0, 100%, 66%)";
         return {
@@ -77,6 +82,7 @@ function Bottomsection() {
           };
         });
       } else {
+        checkerForCondition = "red";
         inputboxes[1].style.border = "1px solid hsl(0, 100%, 66%)";
         setKey((Elem) => {
           return {
@@ -86,6 +92,7 @@ function Bottomsection() {
         });
       }
     } else {
+      checkerForCondition = "red";
       inputboxes[1].style.border = "1px solid hsl(0, 100%, 66%)";
       setKey((Elem) => {
         return {
@@ -104,6 +111,7 @@ function Bottomsection() {
           };
         });
       } else {
+        checkerForCondition = "red";
         inputboxes[4].style.border = "1px solid hsl(0, 100%, 66%)";
         setKey((Elem) => {
           return {
@@ -113,6 +121,7 @@ function Bottomsection() {
         });
       }
     } else {
+      checkerForCondition = "red";
       inputboxes[4].style.border = "1px solid hsl(0, 100%, 66%)";
       setKey((Elem) => {
         return {
@@ -139,7 +148,7 @@ function Bottomsection() {
               expiry: "",
             };
           });
-        } else if (formData.expYear == currentYear) {
+        } else if (formData.expYear === currentYear) {
           if (
             formData.expMonth >= currentMonth &&
             formData.expMonth < 13 &&
@@ -154,6 +163,7 @@ function Bottomsection() {
               };
             });
           } else {
+            checkerForCondition = "red";
             inputboxes[2].style.border = "1px solid hsl(0, 100%, 66%)";
             inputboxes[3].style.border = "1px solid hsl(0, 100%, 66%)";
             setKey((Elem) => {
@@ -164,6 +174,7 @@ function Bottomsection() {
             });
           }
         } else {
+          checkerForCondition = "red";
           inputboxes[2].style.border = "1px solid hsl(0, 100%, 66%)";
           inputboxes[3].style.border = "1px solid hsl(0, 100%, 66%)";
           setKey((Elem) => {
@@ -174,6 +185,7 @@ function Bottomsection() {
           });
         }
       } else {
+        checkerForCondition = "red";
         inputboxes[2].style.border = "1px solid hsl(0, 100%, 66%)";
         inputboxes[3].style.border = "1px solid hsl(0, 100%, 66%)";
         setKey((Elem) => {
@@ -184,6 +196,7 @@ function Bottomsection() {
         });
       }
     } else {
+      checkerForCondition = "red";
       inputboxes[2].style.border = "1px solid hsl(0, 100%, 66%)";
       inputboxes[3].style.border = "1px solid hsl(0, 100%, 66%)";
       setKey((Elem) => {
@@ -194,7 +207,7 @@ function Bottomsection() {
       });
     }
   }
-
+  let [checkrender, setCheckrender] = React.useState("red");
   function SubmitClicked(e) {
     e.preventDefault();
     let CVVrender = document.getElementById("cvvrender");
@@ -203,9 +216,9 @@ function Bottomsection() {
     let reRender = createRoot(cardComponent);
     reRender.render(<Cardsection />);
     validator();
+    setCheckrender(checkerForCondition);
   }
-  console.log(key);
-  return (
+  let RedRender = (
     <div className="bottom-content">
       <form className="form">
         <div className="name-number">
@@ -275,6 +288,22 @@ function Bottomsection() {
         </button>
       </form>
     </div>
+  );
+  let GreenRender = (
+    <div className="thankyou">
+      <img src={tickmark} alt="completed"></img>
+      <h1>THANK YOU!</h1>
+      <h5>We added your card details</h5>
+      <button className="submit-btn" type="submit">
+        Continue
+      </button>
+    </div>
+  );
+  return (
+    <>
+      {checkrender === "green" && GreenRender}
+      {checkrender === "red" && RedRender}
+    </>
   );
 }
 export { Bottomsection };

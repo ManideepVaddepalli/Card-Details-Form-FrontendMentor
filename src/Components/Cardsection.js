@@ -5,7 +5,7 @@ import { totalFormData } from "./Bottomsection";
 function Cardsection() {
   return (
     <div className="top-card-content">
-      <img src={Cardsvg}></img>
+      <img src={Cardsvg} alt="userincard"></img>
       <h4>
         {totalFormData.cardNumber
           ? totalFormData.cardNumber

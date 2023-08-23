@@ -148,7 +148,7 @@ function Bottomsection() {
               expiry: "",
             };
           });
-        } else if (formData.expYear === currentYear) {
+        } else if (formData.expYear == currentYear) {
           if (
             formData.expMonth >= currentMonth &&
             formData.expMonth < 13 &&
